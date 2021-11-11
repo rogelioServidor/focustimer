@@ -25,10 +25,14 @@ export const Countdown = ({
         return time;
       }
       const timeLeft = millis - 1000;
-      progress(timeLeft/minuteToMillis(minutes));
+      //progress(timeLeft/minuteToMillis(minutes));
       return timeLeft;
     });
   }
+
+  useEffect(()=>{
+      progress(millis / minuteToMillis(minutes));
+  },[millis]);
 
   useEffect(()=>{
     setMillis(minuteToMillis(minutes));

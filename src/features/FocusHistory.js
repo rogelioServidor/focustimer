@@ -21,9 +21,7 @@ export const FocusHistory = ({focusHistory, onClear}) =>{
           contentContainerStyle={{flex: 1, alignItems: 'center'}}
           data={focusHistory}
           renderItem={HistoryItem}
-          keyExtractor={(item)=>{
-            item.key;
-          }}
+          keyExtractor={item => item.key}
         />
       </>
       <View style={styles.clearBtn}>
